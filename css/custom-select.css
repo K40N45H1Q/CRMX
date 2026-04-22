@@ -1,0 +1,62 @@
+#table-select { display: none; }
+
+.custom-select { position: relative; width: max-content; font-family: inherit; }
+
+.cs-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 8px 10px;
+  background: #000;
+  color: cyan !important;
+  cursor: pointer;
+  border-radius: 6px;
+  box-sizing: border-box;
+  border: 1px solid cyan;
+  outline: none;
+  background-color: #000 !important;
+}
+
+.cs-trigger:hover {
+  background-color: cyan;
+}
+
+
+.cs-list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 6px 0 0 0;
+  padding: 4px 0;
+  list-style: none;
+  background: #000;
+  max-height: 200px;
+  overflow: auto;
+  display: none;
+  z-index: 1000;
+  border-radius: 6px;
+  box-sizing: border-box;
+  border: 1px solid cyan;
+}
+
+.cs-list[aria-hidden="false"] { display: block; }
+
+.cs-list li {
+  padding: 8px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: cyan !important;
+}
+
+.cs-list li:hover {
+  background: cyan;
+  color: #000 !important;
+  font-weight: bolder;
+}
+
+
+.cs-trigger {
+    color: #fff !important;
+}

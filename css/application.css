@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-family: Arial, sans-serif;
+}
+html, body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+    color: #00FFFF;
+}
+body, .wrapper, .tabulator, .toolbox,
+.tabulator-col, .tabulator-cell, .tabulator-header,
+.toolbox input, .toolbox button, .info, #datetime {
+    color: #00FFFF !important;
+}
+.wrapper {
+    gap: 10px; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; background: #000;
+}
+.tabulator, .toolbox {
+    width: 90%; padding: 5px; border-radius: 7px; background: #000 !important; border: 1px solid #00FFFF !important;
+}
+.toolbox { gap: 10px; display: flex; padding: 10px; }
+.i-container { display: flex; align-items: center; justify-content: space-between; width: 90%; background: #000; }
+.tabulator-col, .tabulator-cell, .tabulator-header {
+    border-color: #00FFFF !important;
+    background-color: #000 !important;
+}
+.tabulator-col { text-align: center !important; }
+.tabulator-row:nth-child(even) .tabulator-cell { background-color: #0a0a0a !important; }
+.tabulator-row:nth-child(odd) .tabulator-cell  { background-color: #000 !important; }
+.tabulator-cell {
+    padding: 8px 12px !important;
+    line-height: 1.4 !important;
+    vertical-align: middle !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tabulator-cell.tabulator-editing {
+    padding: 8px 12px !important;
+    line-height: 1.4 !important;
+    background-color: #000 !important;
+    border-color: #00FFFF !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.tabulator-cell input,
+.tabulator-cell select,
+.tabulator-editor input,
+.tabulator-editor select {
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: inherit !important;
+    font: inherit !important;
+    line-height: inherit !important;
+    text-align: inherit !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+.tabulator-row:hover .tabulator-cell,
+.tabulator-row.tabulator-selected .tabulator-cell {
+    background-color: rgb(0, 37, 37) !important;
+    border-color: #00FFFF !important;
+}
+.tabulator-cell .row-select {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    accent-color: #00FFFF;
+    background-color: #000 !important;
+    border: 1px solid #00FFFF;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+    appearance: auto !important;
+    -webkit-appearance: auto !important;
+    -moz-appearance: auto !important;
+}
+.tabulator-edit-list {
+    background: #000 !important;
+    border: 1px solid #00FFFF !important;
+    border-radius: 5px !important;
+    margin-top: 8px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
+    padding: 4px 0 !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: auto;
+}
+.tabulator-edit-list::-webkit-scrollbar {
+    display: none;
+}
+.tabulator-edit-list .tabulator-edit-list-item,
+.tabulator-edit-list .tabulator-edit-list-item.selected,
+.tabulator-edit-list .tabulator-edit-list-item.active {
+    background: #000 !important;
+    color: #00FFFF !important;
+    font-weight: normal !important;
+    transition: background 0.15s, color 0.15s !important;
+}
+.tabulator-edit-list .tabulator-edit-list-item:hover {
+    background: #00FFFF !important;
+    color: #000 !important;
+    font-weight: 600 !important;
+}
+select, .tabulator-cell select {
+    appearance: none; -webkit-appearance: none; -moz-appearance: none;
+    background: #000 !important; color: #00FFFF !important;
+    border: none !important; outline: none !important;
+}
+.toolbox input {
+    flex: 1; padding: 15px; height: 36px; width: 50%;
+    color: #00FFFF !important; outline: none !important;
+    border: 1px solid #00FFFF; border-radius: 7px; background: #000;
+}
+.toolbox input::placeholder { color: rgba(0, 255, 255, 0.31) !important; }
+.toolbox button {
+    cursor: pointer; background: #000; color: #00FFFF !important;
+    padding: 7px; outline: none !important; border: 1px solid #00FFFF; border-radius: 7px;
+}
+.toolbox button:hover { color: #000 !important; font-weight: bolder; background: #00FFFF !important; }
+.info {
+    display: flex; padding-left: 5px; letter-spacing: 3px; height: 100%; align-items: center; font-size: 17px; font-weight: bolder; border-left: 4px solid #00FFFF; color: #00FFFF !important;
+}
+#datetime {
+    display: flex; align-items: center; justify-content: center; height: 100%; font-size: 13px; font-weight: normal; letter-spacing: 1px;
+}
+.tabulator-menu-item {
+    padding: 5px !important; outline: none !important; border: 2px solid #00FFFF !important; background: #000 !important; color: #00FFFF !important;
+}
+.tabulator-menu-item:hover { color: #000 !important; font-weight: bolder !important; background: #00FFFF !important; }
+.tabulator-placeholder-contents { opacity: 0.5; font-size: 30px !important; color: #00FFFF !important; }
+.status-active { background: #000 !important; }
+.status-inactive { background: #f8d7da !important; }
+.status-pending { background: #fff3cd !important; }
+.status-active:hover { background: #111 !important; }
+.status-inactive:hover { background: #f5c2c6 !important; }
+.status-pending:hover { background: #ffeaa7 !important; }
+*:focus { outline: none !important; box-shadow: none !important; }
+
+.cs-trigger {
+    color: #fff !important;
+}
+
+.math {
+    gap: 10px;
+    display: flex;
+}
+
+.math input {
+    width: 15% !important;
+}
+
+/* Гарантированное отображение платежа */
+.payment-cell,
+.tabulator-cell[tabulator-field="monthly_payment"] {
+    color: #00FFFF !important;
+    font-weight: 700 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+}
+.payment-cell span,
+.tabulator-cell[tabulator-field="monthly_payment"] span {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}

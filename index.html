@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/tabulator.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/custom-select.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/application.css') }}">
+
+</head>
+<body>
+  <div class="wrapper">
+    <div class="i-container">
+      <h1 class="info">CRM: SYSTEM</h1>
+      <h1 id="datetime">time</h1>
+    </div>
+    <div class="toolbox">
+      <select id="table-select" name="table">
+        <option value="users">USERS</option>
+        <option value="cars">CARS</option>
+      </select>
+
+      <div class="custom-select" id="custom-select" role="combobox" aria-haspopup="listbox" aria-expanded="false" tabindex="0" aria-owns="cs-list">
+        <button type="button" class="cs-trigger" id="cs-trigger" aria-labelledby="cs-value">
+          <span id="cs-value">Cars</span>
+        </button>
+        <ul class="cs-list" id="cs-list" role="listbox" tabindex="-1" aria-hidden="true">
+          <li role="option" data-value="cars" aria-selected="true" tabindex="0">Cars</li>
+          <li role="option" data-value="users" tabindex="0">Users</li>
+        </ul>
+      </div>
+
+      <input type="text" placeholder="Search...">
+      <div class="math">
+        <input type="number" placeholder="Terms (Mounths)">
+        <input type="number" placeholder="Annual rate %">
+        <input type="number" placeholder="Initial payment %">
+      </div>
+      <button id="add-row-btn">ADD ROW</button>
+      <button id="add-column-btn">ADD COLUMN</button>
+      <button id="delete-btn">DELETE</button>
+      <button id="save-btn">UPDATE</button>
+      <button>LOGOUT</button>
+    </div>
+
+    <div id="table"></div>
+  </div>
+
+  <script src="{{ url_for('static', path='javascript/tabulator.min.js') }}"></script>
+  <script src="{{ url_for('static', path='javascript/custom-select.js') }}"></script>
+  <script type="module" src="{{ url_for('static', path='javascript/ui.js') }}"></script>
+  <script src="{{ url_for('static', path='javascript/datetime.js') }}"></script>
+</body>
+</html>
